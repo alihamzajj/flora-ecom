@@ -11,6 +11,9 @@
     "seed": "tsx src/seed.ts",
     "seed:admin": "tsx src/seedAdmin.ts"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.5.1",
@@ -27,9 +30,9 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.10.0",
     "stripe": "^17.6.0",
-    "zod": "^3.24.2"
-  },
-  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "zod": "^3.24.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
@@ -38,8 +41,7 @@
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.12",
     "@types/node": "^22.10.5",
-    "@types/nodemailer": "^6.4.17",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
-  }
+    "@types/nodemailer": "^6.4.17"
+  },
+  "devDependencies": {}
 }
