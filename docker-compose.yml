@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: lumea-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./server
+    container_name: lumea-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=development
+      - CLIENT_URL=http://localhost:3000
+      - MONGO_URI=mongodb://mongodb:27017/lumea
+      - JWT_ACCESS_SECRET=super_secret_lumea_skincare_access_token_jwt_2026_magic
+      - JWT_REFRESH_SECRET=super_secret_lumea_skincare_refresh_token_jwt_2026_magic
+      - JWT_ACCESS_EXPIRY=15m
+      - JWT_REFRESH_EXPIRY=7d
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: .
+    container_name: lumea-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:

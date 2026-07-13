@@ -1,0 +1,141 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-rose: var(--rose);
+  --color-wine: var(--wine);
+  --color-beige: var(--beige);
+}
+
+:root {
+  --radius: 1.25rem;
+
+  /* Wine / burgundy dark luxury */
+  --background: oklch(0.16 0.05 12);
+  --foreground: oklch(0.97 0.02 60);
+
+  --card: oklch(0.22 0.07 12 / 60%);
+  --card-foreground: oklch(0.97 0.02 60);
+  --popover: oklch(0.20 0.06 12);
+  --popover-foreground: oklch(0.97 0.02 60);
+
+  --primary: oklch(0.45 0.18 8);        /* deep burgundy #8B0038-ish */
+  --primary-foreground: oklch(0.98 0.01 60);
+
+  --secondary: oklch(0.65 0.22 0);      /* rose pink */
+  --secondary-foreground: oklch(0.15 0.05 12);
+
+  --muted: oklch(0.24 0.05 12);
+  --muted-foreground: oklch(0.78 0.03 60);
+
+  --accent: oklch(0.80 0.13 75);        /* gold */
+  --accent-foreground: oklch(0.15 0.05 12);
+
+  --destructive: oklch(0.62 0.23 27);
+  --destructive-foreground: oklch(0.98 0.01 60);
+
+  --border: oklch(0.98 0.02 60 / 12%);
+  --input: oklch(0.98 0.02 60 / 15%);
+  --ring: oklch(0.65 0.22 0);
+
+  --gold: oklch(0.80 0.13 75);
+  --rose: oklch(0.65 0.22 0);
+  --wine: oklch(0.30 0.12 10);
+  --beige: oklch(0.92 0.03 70);
+
+  --gradient-wine: radial-gradient(ellipse at top, oklch(0.30 0.14 8) 0%, oklch(0.12 0.05 12) 60%);
+  --gradient-hero: linear-gradient(135deg, oklch(0.35 0.16 10) 0%, oklch(0.18 0.07 8) 50%, oklch(0.14 0.05 12) 100%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.45 0.18 8), oklch(0.60 0.22 0));
+  --gradient-gold: linear-gradient(135deg, oklch(0.80 0.13 75), oklch(0.90 0.10 80));
+
+  --shadow-glow: 0 40px 120px -30px oklch(0.60 0.24 0 / 55%);
+  --shadow-soft: 0 20px 60px -20px oklch(0 0 0 / 50%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background: var(--gradient-wine);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--background) 40%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--foreground) 8%, transparent);
+}
+
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glow-primary {
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-24px) rotate(-2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+.animate-marquee { animation: marquee 30s linear infinite; }
