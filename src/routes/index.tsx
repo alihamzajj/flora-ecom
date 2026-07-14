@@ -34,64 +34,64 @@ function Home() {
   return (
     <div className="overflow-hidden">
       {/* HERO */}
-      <section className="relative mx-4 rounded-[2rem] px-6 pb-20 pt-16 sm:px-12 lg:px-16 lg:pt-24" style={{ background: "var(--gradient-hero)" }}>
-        <div className="absolute inset-0 overflow-hidden rounded-[2rem]">
+      <section className="relative mx-3 rounded-[1.5rem] px-5 pb-14 pt-12 sm:mx-4 sm:rounded-[2rem] sm:px-12 sm:pb-20 sm:pt-16 lg:px-16 lg:pt-24" style={{ background: "var(--gradient-hero)" }}>
+        <div className="absolute inset-0 overflow-hidden rounded-[1.5rem] sm:rounded-[2rem]">
           <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-secondary/40 blur-[120px]" />
           <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-primary/50 blur-[140px]" />
         </div>
 
-        <div className="relative grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
+        <div className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-12">
           <div>
             <div className="flex flex-wrap gap-2">
               {["Skincare", "Glow", "Anti-aging"].map((t) => (
-                <span key={t} className="rounded-full border border-foreground/15 bg-background/30 px-3 py-1 text-xs uppercase tracking-widest text-accent backdrop-blur">
+                <span key={t} className="rounded-full border border-foreground/15 bg-background/30 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-accent backdrop-blur sm:text-xs sm:tracking-widest">
                   {t}
                 </span>
               ))}
             </div>
 
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 font-display text-display-xl sm:mt-6">
               Glow Naturally.
               <br />
               <span className="italic text-gradient-gold">Reveal</span> Your Beauty.
             </h1>
 
-            <p className="mt-6 max-w-lg text-base text-muted-foreground sm:text-lg">
+            <p className="mt-5 max-w-lg text-body-lg text-muted-foreground sm:mt-6">
               Premium skincare rituals formulated with clinically-proven actives and botanical extracts — for radiant, healthy skin at every age.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               <Link
                 to="/products"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_60px_-15px_oklch(0.65_0.22_0/55%)] transition hover:scale-[1.02]"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_60px_-15px_oklch(0.65_0.22_0/55%)] transition hover:scale-[1.02]"
               >
                 Shop Now
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/products"
-                className="inline-flex items-center rounded-full border border-foreground/20 px-7 py-3.5 text-sm tracking-wide text-foreground transition hover:bg-foreground/5"
+                className="inline-flex items-center justify-center rounded-full border border-foreground/20 px-7 py-3.5 text-sm tracking-wide text-foreground transition hover:bg-foreground/5"
               >
                 Explore Collection
               </Link>
             </div>
 
-            <div className="mt-12 grid max-w-md grid-cols-3 gap-6">
+            <div className="mt-10 grid max-w-md grid-cols-3 gap-3 sm:mt-12 sm:gap-6">
               {[
                 ["120k+", "Rituals shipped"],
                 ["4.9", "Average rating"],
                 ["100%", "Cruelty free"],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <p className="font-display text-2xl text-gradient-gold">{k}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{v}</p>
+                  <p className="font-display text-xl text-gradient-gold sm:text-2xl">{k}</p>
+                  <p className="mt-1 text-[11px] leading-snug text-muted-foreground sm:text-xs">{v}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Product hero */}
-          <div className="relative mx-auto flex h-[520px] w-full max-w-md items-center justify-center">
+          <div className="relative mx-auto flex h-[320px] w-full max-w-md items-center justify-center sm:h-[420px] lg:h-[520px]">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-secondary/50 to-primary/40 blur-3xl animate-pulse-glow" />
             <div className="absolute inset-8 rounded-full border border-foreground/10" />
             <div className="absolute inset-16 rounded-full border border-foreground/5" />
@@ -101,26 +101,26 @@ function Home() {
               alt="FLORA Radiance Serum"
               width={1024}
               height={1280}
-              className="relative z-10 h-[520px] w-auto max-w-none animate-float-slow object-contain drop-shadow-[0_40px_60px_oklch(0.20_0.10_10/70%)]"
+              className="relative z-10 h-full w-auto max-w-none animate-float-slow object-contain drop-shadow-[0_40px_60px_oklch(0.20_0.10_10/70%)]"
             />
 
-            <div className="glass absolute bottom-6 left-2 z-20 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-[0_20px_60px_-20px_oklch(0_0_0/60%)]">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-accent/20 text-accent">
-                <Sparkles className="h-5 w-5" />
+            <div className="glass absolute bottom-4 left-1 z-20 flex max-w-[70%] items-center gap-2 rounded-2xl px-3 py-2 shadow-[0_20px_60px_-20px_oklch(0_0_0/60%)] sm:bottom-6 sm:left-2 sm:max-w-none sm:gap-3 sm:px-4 sm:py-3">
+              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-accent/20 text-accent sm:h-10 sm:w-10">
+                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Radiance Serum</p>
-                <p className="font-display text-sm">Vitamin C + HA</p>
+              <div className="min-w-0">
+                <p className="truncate text-[11px] text-muted-foreground sm:text-xs">Radiance Serum</p>
+                <p className="truncate font-display text-sm">Vitamin C + HA</p>
               </div>
             </div>
 
-            <div className="glass absolute right-0 top-10 z-20 rounded-2xl px-4 py-3">
+            <div className="glass absolute right-0 top-6 z-20 rounded-2xl px-3 py-2 sm:top-10 sm:px-4 sm:py-3">
               <div className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-3 w-3 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="mt-1 font-display text-xl text-gradient-gold">$49.99</p>
+              <p className="mt-1 font-display text-lg text-gradient-gold sm:text-xl">$49.99</p>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ function Home() {
         <div className="mb-10 flex items-end justify-between gap-6">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-accent">The Collection</p>
-            <h2 className="mt-3 font-display text-4xl sm:text-5xl">Bestselling rituals</h2>
+            <h2 className="mt-3 font-display text-display-lg">Bestselling rituals</h2>
           </div>
           <Link to="/products" className="hidden text-sm text-muted-foreground hover:text-accent sm:inline-flex sm:items-center sm:gap-1">
             View all <ArrowRight className="h-3.5 w-3.5" />
@@ -188,7 +188,7 @@ function Home() {
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-accent">Signature</p>
-            <h2 className="mt-3 font-display text-4xl sm:text-5xl">The {hero.name}</h2>
+            <h2 className="mt-3 font-display text-display-lg">The {hero.name}</h2>
             <p className="mt-4 text-muted-foreground">{hero.description}</p>
             <ul className="mt-6 space-y-2 text-sm">
               {hero.benefits.map((b) => (
@@ -212,7 +212,7 @@ function Home() {
       <section className="mx-auto mt-24 max-w-6xl px-6">
         <div className="mb-10 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-accent">Loved by thousands</p>
-          <h2 className="mt-3 font-display text-4xl sm:text-5xl">Community glow</h2>
+          <h2 className="mt-3 font-display text-display-lg">Community glow</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {[
@@ -241,7 +241,7 @@ function Home() {
       {/* Newsletter */}
       <section className="mx-4 mt-24 rounded-[2rem] px-6 py-16 text-center" style={{ background: "var(--gradient-hero)" }}>
         <p className="text-xs uppercase tracking-[0.3em] text-accent">Join</p>
-        <h2 className="mt-3 font-display text-4xl sm:text-5xl">The Glow Community</h2>
+        <h2 className="mt-3 font-display text-display-lg">The Glow Community</h2>
         <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
           Rituals, launches and early access — sent with intention.
         </p>

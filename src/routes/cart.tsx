@@ -20,7 +20,7 @@ function CartPage() {
     <div className="mx-auto max-w-5xl px-6 pb-24">
       <header className="py-12">
         <p className="text-xs uppercase tracking-[0.3em] text-accent">Your bag</p>
-        <h1 className="mt-3 font-display text-5xl">Shopping Bag</h1>
+        <h1 className="mt-3 font-display text-display-xl">Shopping Bag</h1>
       </header>
 
       {items.length === 0 ? (

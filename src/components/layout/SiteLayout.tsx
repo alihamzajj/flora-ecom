@@ -12,7 +12,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <CartProvider>
         <Navbar />
         <CartDrawer />
-        <main className="pt-24">{children}</main>
+        <main className="overflow-x-hidden pt-20 sm:pt-24">{children}</main>
         <Footer />
         <Toaster />
       </CartProvider>

@@ -18,7 +18,7 @@ function Contact() {
     <div className="mx-auto max-w-5xl px-6 pb-24">
       <header className="py-12 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-accent">Concierge</p>
-        <h1 className="mt-3 font-display text-5xl sm:text-6xl">Say hello</h1>
+        <h1 className="mt-3 font-display text-display-xl">Say hello</h1>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
           Our team is here to help with product advice, orders, and ritual guidance.
         </p>

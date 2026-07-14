@@ -103,7 +103,7 @@ function CheckoutPage() {
     <div className="mx-auto max-w-5xl px-6 pb-24">
       <header className="py-12">
         <p className="text-xs uppercase tracking-[0.3em] text-accent">Secure Checkout</p>
-        <h1 className="mt-3 font-display text-5xl">Complete your ritual</h1>
+        <h1 className="mt-3 font-display text-display-xl">Complete your ritual</h1>
       </header>
 
       <form onSubmit={onSubmit} className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">

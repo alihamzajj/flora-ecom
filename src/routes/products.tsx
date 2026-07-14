@@ -53,7 +53,7 @@ function Products() {
     <div className="mx-auto max-w-6xl px-6 pb-24">
       <header className="py-12 text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-accent">Boutique</p>
-        <h1 className="mt-3 font-display text-5xl sm:text-6xl">Our Collection</h1>
+        <h1 className="mt-3 font-display text-display-xl">Our Collection</h1>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
           Every FLORA formulation is crafted in small batches with the finest actives.
         </p>

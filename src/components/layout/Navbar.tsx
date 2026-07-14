@@ -18,7 +18,7 @@ export function Navbar() {
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary text-sm font-display font-bold text-foreground shadow-[0_0_20px_oklch(0.65_0.22_0/40%)]">
               F
             </span>
-            <span className="font-display text-lg tracking-[0.25em]">FLORA</span>
+            <span className="font-display text-base tracking-[0.18em] sm:text-lg sm:tracking-[0.25em]">FLORA</span>
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
