@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
           alt={product.name}
           loading="lazy"
           decoding="async"
-          className="relative z-10 h-full w-full max-w-full object-contain p-5 sm:p-6"
+          className="relative z-10 h-full w-full max-w-full object-contain p-5 transition duration-500 group-hover:-translate-y-1 sm:p-6 sm:animate-float-soft"
         />
         <span className="absolute left-3 top-3 z-20 rounded-full bg-background/90 px-3 py-1 text-[10px] uppercase tracking-widest text-accent">
           {category}

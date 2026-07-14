@@ -181,13 +181,18 @@
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-24px) rotate(-2deg); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.55; transform: scale(1); }
-  50% { opacity: 0.85; transform: scale(1.08); }
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
 }
 
 @keyframes marquee {
@@ -196,16 +201,28 @@
 }
 
 .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+.animate-float-soft { animation: float-soft 5s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
 .animate-marquee { animation: marquee 30s linear infinite; }
 
-/* Mobile GPU safety: blur + infinite animations corrupt rendering on many phones */
-@media (max-width: 767px) {
+@media (prefers-reduced-motion: reduce) {
   .animate-float-slow,
+  .animate-float-soft,
   .animate-pulse-glow,
   .animate-marquee {
     animation: none !important;
-    transform: none !important;
+  }
+}
+
+/* Mobile: keep soft float; block heavy blur / pulse that causes GPU noise */
+@media (max-width: 767px) {
+  .animate-float-slow {
+    animation: float-soft 5.5s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow,
+  .animate-marquee {
+    animation: none !important;
   }
 
   .blur-3xl,

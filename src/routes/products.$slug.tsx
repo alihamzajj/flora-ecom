@@ -58,13 +58,15 @@ function ProductDetail() {
           className="relative flex h-[300px] items-center justify-center overflow-hidden rounded-[1.5rem] sm:h-[420px] sm:rounded-[2rem] lg:h-[520px]"
           style={{ background: "var(--gradient-hero)" }}
         >
+          <div className="absolute inset-12 rounded-full bg-secondary/20 animate-pulse-glow" />
+          <div className="pointer-events-none absolute inset-10 hidden rounded-full bg-secondary/35 blur-3xl md:block" />
           <img
             src={product.image}
             alt={product.name}
             width={800}
             height={1000}
             decoding="async"
-            className="relative z-10 h-full w-full max-w-full object-contain p-8 sm:p-12 lg:p-16"
+            className="relative z-10 h-full w-full max-w-full animate-float-slow object-contain p-8 sm:p-12 lg:p-16"
           />
         </div>
 

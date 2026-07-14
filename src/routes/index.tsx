@@ -92,13 +92,38 @@ function Home() {
 
           {/* Product hero */}
           <div className="relative mx-auto flex h-[280px] w-full max-w-sm items-center justify-center sm:h-[400px] sm:max-w-md lg:h-[520px]">
+            {/* Soft glow — no blur filter (safe on mobile) */}
+            <div className="absolute inset-10 rounded-full bg-secondary/25 animate-pulse-glow sm:inset-8" />
+            <div className="pointer-events-none absolute inset-0 hidden rounded-full bg-gradient-to-br from-secondary/40 to-primary/30 blur-3xl md:block" />
+            <div className="absolute inset-10 rounded-full border border-foreground/10 sm:inset-8" />
+            <div className="absolute inset-16 rounded-full border border-foreground/5 sm:inset-16" />
+
             <img
               src={serumImg}
               alt="FLORA Radiance Serum"
               width={1024}
               height={1280}
-              className="relative z-10 h-full w-auto max-w-full object-contain"
+              className="relative z-10 h-full w-auto max-w-full animate-float-slow object-contain drop-shadow-lg"
             />
+
+            <div className="glass absolute bottom-4 left-1 z-20 hidden max-w-[70%] items-center gap-2 rounded-2xl px-3 py-2 shadow-lg sm:bottom-6 sm:left-2 sm:flex sm:max-w-none sm:gap-3 sm:px-4 sm:py-3">
+              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-accent/20 text-accent sm:h-10 sm:w-10">
+                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
+              </div>
+              <div className="min-w-0">
+                <p className="truncate text-[11px] text-muted-foreground sm:text-xs">Radiance Serum</p>
+                <p className="truncate font-display text-sm">Vitamin C + HA</p>
+              </div>
+            </div>
+
+            <div className="glass absolute right-0 top-6 z-20 hidden rounded-2xl px-3 py-2 sm:top-10 sm:block sm:px-4 sm:py-3">
+              <div className="flex items-center gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-accent text-accent" />
+                ))}
+              </div>
+              <p className="mt-1 font-display text-lg text-accent sm:text-xl">$49.99</p>
+            </div>
           </div>
         </div>
       </section>
@@ -160,12 +185,14 @@ function Home() {
       <section className="mx-4 mt-24 rounded-[2rem] p-10 sm:p-16" style={{ background: "var(--gradient-hero)" }}>
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative mx-auto h-72 w-full max-w-sm sm:h-96">
+            <div className="absolute inset-8 rounded-full bg-secondary/20 animate-pulse-glow" />
+            <div className="pointer-events-none absolute inset-0 hidden rounded-full bg-secondary/35 blur-3xl md:block" />
             <img
               src={hero.image}
               alt={hero.name}
               loading="lazy"
               decoding="async"
-              className="relative h-full w-full max-w-full object-contain"
+              className="relative h-full w-full max-w-full animate-float-slow object-contain"
             />
           </div>
           <div>
