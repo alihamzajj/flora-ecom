@@ -66,15 +66,9 @@ function AdminLoginPage() {
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl border border-foreground/10 bg-background/40 p-4 text-sm">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground">Use these credentials</p>
-          <p className="mt-2">
-            Email: <span className="text-accent">owner@flora.com</span>
-          </p>
-          <p>
-            Password: <span className="text-accent">Owner12345</span>
-          </p>
-        </div>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Sign in with your private owner account to view customer orders.
+        </p>
 
         <form onSubmit={onSubmit} className="mt-8 space-y-4" autoComplete="on">
           <label className="block">
@@ -83,7 +77,7 @@ function AdminLoginPage() {
               name="email"
               type="email"
               required
-              defaultValue="owner@flora.com"
+              placeholder="you@example.com"
               autoComplete="username"
               className="w-full rounded-xl border border-foreground/15 bg-background/40 px-4 py-3 text-sm focus:border-secondary focus:outline-none"
             />
@@ -95,7 +89,7 @@ function AdminLoginPage() {
                 name="password"
                 type={showPassword ? "text" : "password"}
                 required
-                defaultValue="Owner12345"
+                placeholder="Enter password"
                 autoComplete="current-password"
                 className="w-full rounded-xl border border-foreground/15 bg-background/40 px-4 py-3 pr-20 text-sm focus:border-secondary focus:outline-none"
               />
