@@ -1,0 +1,6 @@
+server
+server/**
+*.md
+docker-compose.yml
+Dockerfile
+.lovable
