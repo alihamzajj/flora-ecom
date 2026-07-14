@@ -63,7 +63,17 @@ app.use("/api/admin", adminRoutes);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
-  res.status(200).json({ status: "ok", timestamp: new Date() });
+  const dbState = mongoose.connection.readyState;
+  // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
+  const dbStatus =
+    dbState === 1 ? "connected" : dbState === 2 ? "connecting" : "disconnected";
+
+  res.status(200).json({
+    status: "ok",
+    timestamp: new Date(),
+    database: dbStatus,
+    mongoUriConfigured: Boolean(process.env.MONGO_URI),
+  });
 });
 
 // Basic Error Handler Middleware
