@@ -54,17 +54,26 @@ function ProductDetail() {
     <div className="mx-auto max-w-6xl px-6 pb-24">
       <div className="grid gap-12 py-12 lg:grid-cols-2">
         {/* Image */}
-        <div className="relative flex h-[560px] items-center justify-center overflow-hidden rounded-[2rem]" style={{ background: "var(--gradient-hero)" }}>
-          <div className="absolute inset-0">
-            <div className="absolute inset-10 rounded-full bg-secondary/40 blur-3xl animate-pulse-glow" />
-          </div>
-          <img src={product.image} alt={product.name} className="relative h-full w-full object-contain p-16 animate-float-slow" />
+        <div
+          className="relative flex h-[300px] items-center justify-center overflow-hidden rounded-[1.5rem] sm:h-[420px] sm:rounded-[2rem] lg:h-[520px]"
+          style={{ background: "var(--gradient-hero)" }}
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            width={800}
+            height={1000}
+            decoding="async"
+            className="relative z-10 h-full w-full max-w-full object-contain p-8 sm:p-12 lg:p-16"
+          />
         </div>
 
         {/* Details */}
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-accent">{product.category}</p>
-          <h1 className="mt-3 font-display text-4xl sm:text-5xl">{product.name}</h1>
+          <p className="text-xs uppercase tracking-[0.3em] text-accent">
+            {typeof product.category === "string" ? product.category : (product.category as { name?: string })?.name || "Skincare"}
+          </p>
+          <h1 className="mt-3 font-display text-display-lg sm:text-5xl">{product.name}</h1>
           <p className="mt-2 text-muted-foreground">{product.tagline}</p>
 
           <div className="mt-4 flex items-center gap-2 text-sm">
@@ -74,7 +83,7 @@ function ProductDetail() {
             <span className="text-muted-foreground">{product.rating} • {product.reviews} reviews</span>
           </div>
 
-          <p className="mt-6 font-display text-4xl text-gradient-gold">${product.price.toFixed(2)}</p>
+          <p className="mt-6 font-display text-3xl text-accent sm:text-4xl">${product.price.toFixed(2)}</p>
 
           <p className="mt-6 leading-relaxed text-muted-foreground">{product.description}</p>
 
